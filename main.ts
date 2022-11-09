@@ -9,6 +9,7 @@ namespace sort {
 
     //% block="sort $array in order of $order"
     //% blockId=sorting_quick_sort
+    //% blockSetVariable=sorted
     export function quick_sort(array: Array<number>, order: Order): Array<number> {;
         if (array.length <= 1) {
             return array;
@@ -38,6 +39,3 @@ namespace sort {
         return quick_sort(first_array, order).concat([pivot]).concat(quick_sort(second_array, order));
     }
 }
-
-let a = [7, 8, 4, 34, 56, 1];
-console.log(sort.quick_sort(a, Order.Descending));
