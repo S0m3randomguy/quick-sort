@@ -11,18 +11,20 @@ namespace sort {
     //% blockId=sorting_quick_sort
     //% blockSetVariable=sorted
     export function quick_sort(array: Array<number>, order: Order): Array<number> {;
-        if (array.length <= 1) {
+        let copy = array.map((value) => value);
+        
+        if (copy.length <= 1) {
             return array;
         }
-        let pivot = array.pop();
+        let pivot = copy.pop();
         let greater: Array<number> = [];
         let lower: Array<number> = [];
 
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] > pivot) {
-                greater.push(array[i]);
+        for (let i = 0; i < copy.length; i++) {
+            if (copy[i] > pivot) {
+                greater.push(copy[i]);
             } else {
-                lower.push(array[i]);
+                lower.push(copy[i]);
             }
         }
         let first_array;
